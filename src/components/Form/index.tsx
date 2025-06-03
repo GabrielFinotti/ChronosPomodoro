@@ -5,7 +5,13 @@ function Form() {
   return (
     <form className={style.form}>
       <div className={style.formRow}>
-        <Input type="text" label="Task" id="task" />
+        <Input
+          type="text"
+          labelText="Task"
+          id="task"
+          placeholder="Digite sua tarefa"
+          disabled
+        />
       </div>
       <div className={style.formRow}>
         <p>Lorem ipsum dolor sit amet.</p>

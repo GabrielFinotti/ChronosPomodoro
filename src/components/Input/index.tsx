@@ -2,16 +2,14 @@ import style from "./styles.module.css";
 
 type InputProps = {
   type: "text" | "number";
-  label: string;
+  labelText?: string;
 } & React.ComponentPropsWithoutRef<"input">;
 
-function Input(props: InputProps) {
+function Input({ type, labelText, ...props }: InputProps) {
   return (
     <>
-      <label className={style.label} htmlFor={props.id}>
-        {props.label}
-      </label>
-      <input className={style.input} type={props.type} id={props.id} />
+      {labelText && <label htmlFor={props.id}>{labelText}</label>}
+      <input className={style.input} type={type} {...props} />
     </>
   );
 }
