@@ -28,27 +28,35 @@ Este repositório foi criado com o propósito de:
 - [x] Configuração de ESLint otimizada
 - [x] Sistema de cores e tema customizado
 - [x] Estrutura base do projeto
-- [x] Componentes base (Container e Heading)
 - [x] Sistema de CSS Modules para estilização
 - [x] Integração com Lucide React para ícones
+- [x] **Logo Component** - Branding "Chronos" com ícone de timer
+- [x] **Menu Component** - Navegação com ícones (Home, History, Settings, Theme)
+- [x] **CountDown Component** - Display do timer com tipografia responsiva
+- [x] **Form Component** - Formulário para cadastro de tarefas
+- [x] **Input Component** - Componente reutilizável com tipagem TypeScript
+- [x] Interface base completa da aplicação Pomodoro
 
 ### 🔄 Em Desenvolvimento
 
-- [ ] Timer do Pomodoro (25 minutos de foco)
+- [ ] Timer funcional do Pomodoro (25 minutos de foco)
 - [ ] Timer de pausa curta (5 minutos)
 - [ ] Timer de pausa longa (15 minutos)
 - [ ] Controles de play/pause/reset
+- [ ] Funcionalidade de cadastro e gerenciamento de tarefas
+- [ ] Sistema de ciclos e contadores visuais
 - [ ] Notificações sonoras
-- [ ] Contador de sessões completadas
 - [ ] Persistência de dados no localStorage
 
 ### 🎯 Futuras Melhorias
 
 - [ ] Configurações personalizáveis de tempo
 - [ ] Estatísticas de produtividade
-- [ ] Temas personalizáveis
+- [ ] Temas personalizáveis (implementar funcionalidade do botão theme)
 - [ ] Progressive Web App (PWA)
 - [ ] Integração com APIs de tarefas
+- [ ] Histórico de sessões
+- [ ] Relatórios de produtividade
 
 ## 🛠️ Instalação e Execução
 
@@ -106,7 +114,12 @@ npm run lint
 src/
 ├── components/          # Componentes reutilizáveis
 │   ├── Container/       # Componente de container com CSS Modules
-│   └── Heading/         # Componente de cabeçalho
+│   ├── CountDown/       # Display do timer principal
+│   ├── Form/           # Formulário para cadastro de tarefas
+│   ├── Input/          # Componente de input reutilizável
+│   ├── Logo/           # Logo "Chronos" com branding
+│   ├── Menu/           # Menu de navegação com ícones
+│   └── Heading/        # Componente de cabeçalho (legacy)
 ├── styles/             # Arquivos de estilo
 │   ├── global.css      # Estilos globais
 │   ├── theme.css       # Variáveis de tema
