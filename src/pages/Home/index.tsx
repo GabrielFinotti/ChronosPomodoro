@@ -1,7 +1,7 @@
 import Container from "../../components/Container";
 import CountDown from "../../components/CountDown";
 import Form from "../../components/Form";
-import MainTemplate from "../../components/templates/MainTemplate";
+import MainTemplate from "../../templates/MainTemplate";
 
 function Home() {
   return (
