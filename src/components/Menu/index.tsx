@@ -11,7 +11,17 @@ import { useEffect, useState } from "react";
 type AvailableThemes = "dark" | "light";
 
 function Menu() {
-  const [theme, setTheme] = useState<AvailableThemes>("dark");
+  const [theme, setTheme] = useState<AvailableThemes>(() => {
+    const storageTheme =
+      (localStorage.getItem("theme") as AvailableThemes) || "light";
+
+    return storageTheme;
+  });
+
+  const nextThemeIcon = {
+    dark: <SunIcon />,
+    light: <MoonIcon />,
+  };
 
   const handleThemeChange = (
     event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
@@ -26,6 +36,8 @@ function Menu() {
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
+
+    localStorage.setItem("theme", theme);
   }, [theme]);
 
   return (
@@ -61,7 +73,7 @@ function Menu() {
         aria-label="Mudar o tema"
         onClick={handleThemeChange}
       >
-        {theme === "dark" ? <SunIcon /> : <MoonIcon />}
+        {nextThemeIcon[theme]}
       </a>
     </nav>
   );
